@@ -41,8 +41,8 @@
         </div>
 
         <div class="surveyPart--one container">
-            <ul class="list-group">
-                <a href="" class="list-group-item-action list-group-item"><span class="badge badge-primary float-left">1</span>Ask about occupation</a>
+            <ul class="list-group" id="targetUl">
+                <a href="" class="list-group-item-action list-group-item">Ask about occupation</a>
                 <a href="" class="list-group-item-action list-group-item">Get general information about life there. Satisfied/Unsatisfied/Neutral</a>
                 <a href="" class="list-group-item-action list-group-item">Idea about population. Number of members in a family</a>
                 <a href="" class="list-group-item-action list-group-item">Try to get an idea about the male/female ratio in each family</a>
@@ -65,9 +65,17 @@
 
     </div>
 
+<script>
+    const allHref= Array.from(document.querySelectorAll("ul > a"));
 
+    let counter= 1;
 
+    allHref.forEach((item)=>{
+        item.insertAdjacentHTML("afterbegin",`<span class="badge badge-primary float-left">${counter}</span>`);
+        counter+= 1;
+    });
 
+</script>
 
 </body>
 </html>
